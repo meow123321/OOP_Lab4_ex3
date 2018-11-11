@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class TheLibrary {
+class TheLibrary : public Book {
 public:
 	vector <Book> library;
 
@@ -14,5 +14,6 @@ public:
 	TheLibrary(vector<Book> library);
 	~TheLibrary();
 
-	//void Search(string title, string author, string ISBN, vector<Book> library);
+
+
 };

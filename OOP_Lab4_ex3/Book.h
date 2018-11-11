@@ -15,7 +15,8 @@ public:
 	int apparence_year;
 	double price;
 
-	// The functions that check if the title/author/ISBN are in the
+	
+	// The functions that check if the title/author/ISBN are in the vector
 	bool check_title(string title);
 	bool check_author(string author);
 	bool check_ISBN(string ISBN);
@@ -24,7 +25,7 @@ public:
 
 	//the default Constructor
 	Book();
-	//the parameterized constructors
+	//the parameterized constructor
 	Book(string title, string author, string publishing_house, string ISBN, int apparence_year, double price);
 	// the destructor
 	~Book();

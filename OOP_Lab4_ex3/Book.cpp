@@ -1,8 +1,7 @@
 #include"Book.h"
+#include"TheLibrary.h"
 
-
-Book::Book() {
-}
+Book::Book() {}
 
 Book::Book(string title, string author, string publishing_house, string ISBN, int apparence_year, double price) {
 	this->title = title;
@@ -15,8 +14,7 @@ Book::Book(string title, string author, string publishing_house, string ISBN, in
 
 }
 
-Book ::~Book() {
-}
+Book ::~Book() {}
 
 bool Book::check_title(string title) {
 	if (title == this->title)
