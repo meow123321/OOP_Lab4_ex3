@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	vector<Book> my_library;
+	TheLibrary my_library;
 	// the parameters we will search 
 	string title_to_find;
 	string author_to_find;
@@ -13,18 +13,6 @@ int main() {
 
 	int count_title, count_author, count_ISBN;
 
-	// Introdcting the class objects
-	
-	/*
-	my_library.push_back(Book("The portrait of Dorian Gray", "Ocar Wilde", "Rao", "1607107325", 2013, 56.99));
-	my_library.push_back(Book("Miss Peregrine", "Ransom Riggs", "youngArt", "9788408158035", 2015, 34.90));
-	my_library.push_back(Book("Clubul Mefisto", "Tess Gerritsen", "Rao", "9789731034294", 2008, 29.99));
-	my_library.push_back(Book("Red Dragon", "Thomas Harris", "Rao", "9789731038964", 2009, 16.90));
-	my_library.push_back(Book("The Exorcist", "William Peter Blatty", "Rao", "006209436X", 2011, 64.99));
-	*/
-
-	TheLibrary::TheLibrary(my_library);
-	TheLibrary::TheLibrary();
 
 	cout << "Enter the title of the book you search: ";
 	getline(cin, title_to_find);
@@ -43,27 +31,27 @@ int main() {
 	for (int i = 0; i < 5; i++) {
 		
 
-		if (my_library[i].check_title(title_to_find)) {
+		if (my_library.library[i].check_title(title_to_find)) {
 				cout << "\nWe fount the book " << title_to_find;
 				count_title++;
 			}
 
-		if (my_library[i].check_author(author_to_find)) {
+		if (my_library.library[i].check_author(author_to_find)) {
 				cout << "\nWe fount the books written by  " << author_to_find << " : ";
-				cout << my_library[i].title;
+				cout << my_library.library[i].title;
 				count_author++;
 			}
 
-		if (my_library[i].check_ISBN(ISBN_to_find)) {
-				cout << "\nThe book with the ISBN " << my_library[i].ISBN << " is "
-					<< my_library[i].title << " by " << my_library[i].author;
+		if (my_library.library[i].check_ISBN(ISBN_to_find)) {
+				cout << "\nThe book with the ISBN " << my_library.library[i].ISBN << " is "
+					<< my_library.library[i].title << " by " << my_library.library[i].author;
 				count_ISBN++;
 
 
 			}
 		for (int j = 1; j < 5; j++) {
 
-			if ((my_library[i].ISBN == my_library[j].ISBN) && (i != j)) {
+			if ((my_library.library[i].ISBN == my_library.library[j].ISBN) && (i != j)) {
 				cout << "\nERROR : There can not be more books with the same ISBN\n";
 				cout << "Check the books " << i << " and " << j;
 			}

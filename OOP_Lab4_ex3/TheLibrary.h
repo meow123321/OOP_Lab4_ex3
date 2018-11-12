@@ -9,9 +9,7 @@ using namespace std;
 class TheLibrary : public Book {
 public:
 	vector <Book> library;
-
 	TheLibrary();
-	TheLibrary(vector<Book> library);
 	~TheLibrary();
 
 
